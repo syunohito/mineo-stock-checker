@@ -30,12 +30,10 @@ jobs:
           sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
-
       - name: 依存パッケージをインストール
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
       - name: 在庫チェックを実行
         run: python stock_checker.py
         env:
